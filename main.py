@@ -237,7 +237,7 @@ def showClass():
         for i in range(1,6):
             if Class.getClass(i,Tomorrow)['course']!='无课程':
                 ClassInfo=Class.getClass(i,Tomorrow)
-                ClassFont.render_to(screen,(75,550+35+35*count+35*Tomorrowcount),'第'+str(i)+'节:'+ClassInfo['course'],(255-random.randint(0,128),255-random.randint(0,128),255-random.randint(0,128)),10)
+                ClassFont.render_to(screen,(75,550+35+35*count+35*(Tomorrowcount+1)),'第'+str(i)+'节:'+ClassInfo['course'],(255-random.randint(0,128),255-random.randint(0,128),255-random.randint(0,128)),10)
                 Tomorrowcount+=1
     if Time.getWeekday()=='星期六' or Time.getWeekday()=='星期五' or Tomorrowcount==0:
         ClassFont.render_to(screen, (75, 550+35*count), "明日无课程", (30, 144, 255), 10)
