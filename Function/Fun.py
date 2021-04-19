@@ -50,12 +50,19 @@ def getNews(type):#获取type类型的新闻（新闻质量堪忧）
 
 
 def getHot():#获取百度热搜前三
-    newsList = requests.get('http://top.baidu.com/mobile_v2/buzz/hotspot/')
-    newsList=eval(newsList.text)
-    top3=[]
-    for i in range(0,3):
-        top3.append(newsList['result']['topwords'][i]['keyword'])
-    return top3
+    try:
+        newsList = requests.get('http://top.baidu.com/mobile_v2/buzz/hotspot/')
+        newsList=eval(newsList.text)
+        top3=[]
+        for i in range(0,3):
+            top3.append(newsList['result']['topwords'][i]['keyword'])
+        return top3
+    except:
+        top3=[]
+        top3.append('获取百度热点失败')
+        top3.append('获取百度热点失败')
+        top3.append('获取百度热点失败')
+        return top3
 
 def getLunar():
     Date=str(Time.getYear())+'-'+str(Time.getMonth())+'-'+str(Time.getDay())
@@ -67,7 +74,7 @@ def getLunar():
         result = eval(result.text)  # 若请求结果为Resonse<200>，那么可以尝试.text来访问
         return result['result']['data']['lunarYear']+' '+result['result']['data']['lunar']
     except:
-        return '辛丑年二月廿七'
+        return '获取农历失败'
 
 def getHoliday():
     Date=str(Time.getYear())+'-'+str(Time.getMonth())+'-'+str(Time.getDay())
