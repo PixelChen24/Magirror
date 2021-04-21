@@ -1,4 +1,4 @@
-pygame
+pygame ==1.9.6
 requests
 pillow
 MyQR
