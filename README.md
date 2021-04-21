@@ -1,6 +1,6 @@
 ﻿@[toc]
 # Magirror——基于pygame的树莓派魔镜
-先放上原创项目地址，求Star！[Github仓库地址](https://github.com/PixelChen24/Magirror)
+原创项目，求Star！
 
 
 
