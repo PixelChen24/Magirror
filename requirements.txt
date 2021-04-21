@@ -1,5 +1,5 @@
-pygame ==1.9.6
+pygame==1.9.6
 requests
 pillow
 MyQR
-skimage
+scikit-image
