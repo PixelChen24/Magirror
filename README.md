@@ -51,7 +51,7 @@
 
 python3
 
-pygame 2.0.1    ( 通过pip 安装)
+pygame 1.9.6    ( 通过pip 安装)
 
 ### 3.pip包
 
