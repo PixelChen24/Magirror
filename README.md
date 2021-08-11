@@ -62,7 +62,13 @@ pillow
 
 MyQR
 
-skimage
+scikit-image
+
+可以在根目录直接使用
+``` shell
+pip install -r requirements.txt
+```
+快速安装全部依赖
 
 ### 4.HTTPS API接口
 
