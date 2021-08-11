@@ -1,6 +1,6 @@
 ﻿@[toc]
 # Magirror——基于pygame的树莓派魔镜
-原创项目，求Star！
+先放上原创项目地址，求Star！[Github仓库地址](https://github.com/PixelChen24/Magirror)
 
 
 
@@ -16,7 +16,7 @@
 
 ## （一）功能概览
 
-![整体UI](https://img-blog.csdnimg.cn/20210412104155609.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
+![整体UI](/Assets/UI2.0.png)
 ![实地拍摄](/Assets/RealTime.jpg)
 目前把软件部分写好了，原子镜还没上，包装也没开始做。不过这些应该都是小事，而且我还想扩展一些智能家居，传感器，语音助手之类的IO设备功能，于是就没有做包装。
 
@@ -106,14 +106,14 @@ skimage
 
 #### 修改Function/Weather.py
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210412105220235.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](/Assets/WeatherAPI.jpg)
 
 
 将第五行的API秘钥修改为你自己的
 
 #### 修改Function/Fun.py
 
-![将对应的秘钥修改为你自己的](https://img-blog.csdnimg.cn/20210412105249753.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
+![将对应的秘钥修改为你自己的](/Assets/FunAPI.jpg)
 将对应的秘钥修改为你自己的
 
 
@@ -122,12 +122,12 @@ skimage
 
 #### 写入自己的课表信息
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/202104121053325.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](/Assets/SetClassTable.jpg)
 
 
 table是一个字典，字典第一层的键为星期，第二层的键为课序号。第三层的键为课程名course,周次range,上课地点room.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2021041210534665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](/Assets/MyClass.png)
 
 
 比如上图是我的课表，那么对应的table结构就是第一张图。可以根据自己实际情况修改table（对于没有python基础的同学来说可能有点难，如果自己不会改可以联系我QQ:1640867082)
@@ -138,7 +138,7 @@ table是一个字典，字典第一层的键为星期，第二层的键为课序
 
 具体操作为：
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210412105407209.jpg#pic_center)
+![在这里插入图片描述](/Assets/SentenceType.jpg)
 
 
 Function/Fun.py文件，在16行的中括号内增加或删除类型（字母'a'~'k'的代号）即可。代号代表的类型参见 [链接](https://pa-1251215871.cos-website.ap-chengdu.myqcloud.com/sentence/#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0)
@@ -190,7 +190,7 @@ python main.py
 
 3.在Windows运行和树莓派运行效果可能有一点点不一样。树莓派默认pygame版本为1.9.4，所以运行可能会报错：
 
-![SDL错误](https://magirror.oss-cn-beijing.aliyuncs.com/Errors/libsdl%E6%8A%A5%E9%94%99.png)
+![SDL错误](/Assets/libsdlwrong.png)
 
 这时你需要安装libSDL,在树莓派终端通过命令行安装：
 
@@ -204,5 +204,5 @@ sudo apt install libsdl2-ttf-2.0-0
 我炒鸡热心的！
 
 ## （柒）所以可以捐赠鼓励一下吗？
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210412105531172.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](Assets/Pay.jpg)
 
