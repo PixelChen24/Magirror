@@ -17,7 +17,7 @@
 ## （一）功能概览
 
 ![整体UI](https://img-blog.csdnimg.cn/20210412104155609.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
-![实地拍摄](https://img-blog.csdnimg.cn/20210412104629379.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MDgzODU3,size_16,color_FFFFFF,t_70#pic_center)
+![实地拍摄](/Assets/RealTime.jpg)
 目前把软件部分写好了，原子镜还没上，包装也没开始做。不过这些应该都是小事，而且我还想扩展一些智能家居，传感器，语音助手之类的IO设备功能，于是就没有做包装。
 
 1. 显示天气，生活指数
