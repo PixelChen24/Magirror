@@ -3,7 +3,6 @@ ver = 'Version: v1.2.0'
 import pygame
 import sys
 import random
-#sys.path.append("/media/pixelchen/OS/Users/chen/source/repos/赵小姐的魔镜/")
 import os
 import time
 from Function import Time, Fun, Weather, Class
@@ -272,10 +271,6 @@ def showHistory():
     ContentFont=pygame.freetype.Font("FontLib/setup/楷体.TTF",30)
     ContentFont.render_to(screen,(0,1500),HistoryMessage,(255,255,255))
 
-def showVer():
-    VerFont=pygame.freetype.Font("FontLib/setup/苹方黑体-细-简.ttf",10)
-    VerFont.render_to(screen,(790,1900),'Magirror '+ver+' @Pixel·Chen ®All Rights Reserved',(255,255,255))
-
 def showSentence():
     SentenceFont=pygame.freetype.Font("FontLib/setup/楷体.TTF",36)
     length=len(DailySentence)
@@ -288,7 +283,6 @@ showTime()
 showMainWeather()
 showMoreWeather()
 showHot()
-showVer()
 showClass()
 showHistory()
 showSentence()
@@ -305,7 +299,6 @@ while 1:
         showMainWeather()
         showMoreWeather()
         showHot()
-        showVer()
         showClass()
         showHistory()
         showSentence()
