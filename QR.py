@@ -32,8 +32,7 @@ def getQR():
             save_dir='QR/'
 
         )
+        print("QR refreshed successfully.")
         return title, date
     except:
         return "0.O参数错误","Wrong"
-
-getQR()

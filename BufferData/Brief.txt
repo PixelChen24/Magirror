@@ -1,0 +1,3 @@
+ApiData stores everyday's api data fetched from website in order to save resource.
+Config stores basic user profile data.
+Visited stores wheather this mirror is used each day.

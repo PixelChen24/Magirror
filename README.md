@@ -1,16 +1,14 @@
-﻿@[toc]
+﻿[TOC]
+
 # Magirror——基于pygame的树莓派魔镜
+
 先放上原创项目地址，求Star！[Github仓库地址](https://github.com/PixelChen24/Magirror)
-
-
 
 **首先，为什么要用pygame？**
 
 ——GitHub上已经有一个MagicMirror的项目了，star数也很高。我去试着装了一下，无奈环境配了好几天都没弄好，毕竟作者是外国人，网络情况什么的（你懂得）和国内不大一样，又是装nodejs又是装electron，各种坑。于是我就萌发了用pygame来写一个魔镜的想法，只要你的设备支持完整的python（不包括MicroPython）就能运行！真的是有手就行！
 
 把这个镜子完整的做出来，送给女生真的是很好康的桌面摆件呢
-
-
 
 版本v1.2.2(不定期更新版本)
 
@@ -21,21 +19,14 @@
 目前把软件部分写好了，原子镜还没上，包装也没开始做。不过这些应该都是小事，而且我还想扩展一些智能家居，传感器，语音助手之类的IO设备功能，于是就没有做包装。
 
 1. 显示天气，生活指数
-
 2. 显示今明两天课表信息
-
 3. 显示当日热点
-
 4. 推送高质量知乎日报，可以扫描QR码阅读
-
 5. 历史上的今天
-
 6. 一段让人心动的句子
 
    **以上数据除时间实时刷新外，每到整点刷新一次**
-
 7. 基于blinker的智能家居控制（开发中）
-
 8. 语音聊天机器人（开发中）
 
 ## （二）环境要求
@@ -62,13 +53,7 @@ pillow
 
 MyQR
 
-scikit-image
-
-可以在根目录直接使用
-``` shell
-pip install -r requirements.txt
-```
-快速安装全部依赖
+skimage
 
 ### 4.HTTPS API接口
 
@@ -108,12 +93,17 @@ pip install -r requirements.txt
 
 ## （三）环境配置
 
-### 1.配置API秘钥相关信息
+### 1.下载字体包
+
+由于字体包较大，放在GitHub仓库下载速度较慢，因此我将它放在了[百度网盘](https://pan.baidu.com/s/1rlzWqmlZ5RiZYXNIkhxv_Q), 提取码`j252`
+
+解压后保存在`Fontlib/setup`文件夹内
+
+### 2.配置API秘钥相关信息
 
 #### 修改Function/Weather.py
 
 ![在这里插入图片描述](/Assets/WeatherAPI.jpg)
-
 
 将第五行的API秘钥修改为你自己的
 
@@ -122,19 +112,15 @@ pip install -r requirements.txt
 ![将对应的秘钥修改为你自己的](/Assets/FunAPI.jpg)
 将对应的秘钥修改为你自己的
 
-
-
-### 2.自定义数据
+### 3.自定义数据
 
 #### 写入自己的课表信息
 
 ![在这里插入图片描述](/Assets/SetClassTable.jpg)
 
-
 table是一个字典，字典第一层的键为星期，第二层的键为课序号。第三层的键为课程名course,周次range,上课地点room.
 
 ![在这里插入图片描述](/Assets/MyClass.png)
-
 
 比如上图是我的课表，那么对应的table结构就是第一张图。可以根据自己实际情况修改table（对于没有python基础的同学来说可能有点难，如果自己不会改可以联系我QQ:1640867082)
 
@@ -146,10 +132,9 @@ table是一个字典，字典第一层的键为星期，第二层的键为课序
 
 ![在这里插入图片描述](/Assets/SentenceType.jpg)
 
-
 Function/Fun.py文件，在16行的中括号内增加或删除类型（字母'a'~'k'的代号）即可。代号代表的类型参见 [链接](https://pa-1251215871.cos-website.ap-chengdu.myqcloud.com/sentence/#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0)
 
-### 3.树莓派换python3
+### 4.树莓派换python3
 
 树莓派默认使用python2.7，然而本人在Windows上面开发好之后放上去运行报了一堆奇怪的错误，罪魁祸首是python2.7
 
@@ -183,13 +168,12 @@ python main.py
 
 如果纠结USB或者HDMI线太硬不好控制边框空间的话，可以尝试淘宝搜一下“直角USB”或者“直角HDMI”之类的，你会眼前一亮的
 
-
-
 电源线公用一根，通过改装USB先把两根焊成一根。
 
 如果纠结USB或者HDMI线太硬不好控制边框空间的话，可以尝试淘宝搜一下“直角USB”或者“直角HDMI”之类的，你会眼前一亮的
 
 ## （六）常见问题
+
 1.如果你是先在Windows上面调试的，发现屏幕显示不完整，那么请你查看一下你的屏幕有没有设置缩放。我就是最开始默认开了125%的缩放结果坐标位置老是找不对。
 
 2.目前心知天气免费用户仅支持国内天气查询，所以如果你是在国外或者是电脑挂着梯子的话，获取天气是会出错的，具体表现为数据显示为“x"
@@ -200,15 +184,14 @@ python main.py
 
 这时你需要安装libSDL,在树莓派终端通过命令行安装：
 
-``` shell
+```shell
 sudo apt install libsdl2-ttf-2.0-0
 ```
-
 
 有其他问题欢迎随时联系QQ 1640867082
 
 我炒鸡热心的！
 
 ## （柒）所以可以捐赠鼓励一下吗？
-![在这里插入图片描述](Assets/Pay.jpg)
 
+![在这里插入图片描述](Assets/Pay.jpg)
