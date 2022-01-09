@@ -1,7 +1,9 @@
-client_id: "client_id"  # your client_id
-client_secret: "client-secret"  # your client_secret
-redirect: "your callback uri"
-refresh_token: "Your refresh token"
+client_id: "a98dd5e1-c705-4812-be4f-037a2fd9569a"  # your client_id
+client_secret: "K_Z7Q~xvmUcOoVSBmHoR6sfA.cCdkrQVUb04L"  # your client_secret
+# app_id: "33816779-88e0-4ccd-b2c2-3dc3f9bc74c0"
+# app_secret: "h.87Q~5kVviMJIIuoCrYmW4IutlG93jh2bDEN" # magirror
+redirect: "http://localhost:8000/callback"
+refresh_token: "M.R3_BAY.-CZ0rgqlOaQD!qAaQLdmtXuQK2FqwOhfBlK74EhC2jgQJjC85UqJzpj8O9ezqY7ozZPXWiRcqt0X4k3qUP!MfMK*FfIkIiB9q*bAD6gKdH37YzB!GcBsYP57C9Zfihisi4u3T5N3UoD!p7ZX060hFew63vfXIW9gcBEirq*PwDDbjh9*t1t!JzWsHxpCH!1ZB6EroD8EyWpViVQMXNyiJ58aIsaNkQruvT9YLL8z28ZK8nHlVq1!36Gu4q1naIwD0SyWw9oazDus1mPYT6kzEuHe3hnzrE2oc8OuSHKBMoqD1QRGvk1nFhaYopVcA4fUtnh5iTet4PIDvhpYzPsyBW5I$"
 
 scopes:  # permission
   - user.read
