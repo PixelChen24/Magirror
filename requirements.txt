@@ -1,5 +1,8 @@
-pygame==1.9.6
-requests
-pillow
-MyQR
-scikit-image
+requests~=2.22.0
+MyQR~=2.3.1
+scikit-image~=0.18.1
+numpy~=1.19.2
+opencv-python~=3.4.8.29
+pygame~=2.0.1
+PyYAML~=5.4
+msal~=1.16.0

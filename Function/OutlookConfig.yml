@@ -1,0 +1,12 @@
+client_id: "client_id"  # your client_id
+client_secret: "client-secret"  # your client_secret
+redirect: "your callback uri"
+refresh_token: "Your refresh token"
+
+scopes:  # permission
+  - user.read
+  - mailboxsettings.read
+  - calendars.readwrite
+authority: "https://login.microsoftonline.com/common"
+graph_api: "https://graph.microsoft.com/v1.0"
+
