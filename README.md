@@ -1,4 +1,4 @@
-﻿[TOC]
+﻿﻿﻿[TOC]
 
 # Magirror——基于pygame的树莓派魔镜
 
@@ -10,54 +10,59 @@
 
 把这个镜子完整的做出来，送给女生真的是很好康的桌面摆件呢
 
-版本v1.2.2(不定期更新版本)
+版本v2.0(不定期更新版本)
 
-## （一）功能概览
+---
+
+## :desktop_computer:1.功能概览
 
 ![整体UI](/Assets/UI2.0.png)
 ![实地拍摄](/Assets/RealTime.jpg)
-目前把软件部分写好了，原子镜还没上，包装也没开始做。不过这些应该都是小事，而且我还想扩展一些智能家居，传感器，语音助手之类的IO设备功能，于是就没有做包装。
+包装也没开始做。不过这些应该都是小事，而且我还想扩展一些智能家居，传感器，语音助手之类的IO设备功能，于是就没有做包装。
 
 1. 显示天气，生活指数
-2. 显示今明两天课表信息
+
+2. 显示最近三天日程 (**与Outlook 账户同步**，这是v2.0版本的更新！)
+
 3. 显示当日热点
+
 4. 推送高质量知乎日报，可以扫描QR码阅读
+
 5. 历史上的今天
+
 6. 一段让人心动的句子
 
    **以上数据除时间实时刷新外，每到整点刷新一次**
+   
 7. 基于blinker的智能家居控制（开发中）
+
 8. 语音聊天机器人（开发中）
 
-## （二）环境要求
+---
 
-### 1.硬件要求
+## :package:2. 环境要求
 
-1.装好官方raspbian系统的树莓派
+### 2.1. 硬件要求
 
-2.一块1080p的小屏幕 [推荐淘宝链接](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3e352e8dEUsahj&id=558956849119&_u=b2029g7480bb2d)
+* 装好官方raspbian系统的树莓派
 
-3.单向透光原子镜(魔镜的灵魂！没了这块镜子你的魔镜只能是一块屏幕) [推荐淘宝链接](https://item.taobao.com/item.htm?spm=a230r.1.14.21.37671f49BXbKpo&id=555111074798&ns=1&abbucket=17#detail)
+* 一块1080p的小屏幕 [推荐淘宝链接](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3e352e8dEUsahj&id=558956849119&_u=b2029g7480bb2d)
 
-### 2.基础软件要求
+* 单向透光原子镜(魔镜的灵魂！没了这块镜子你的魔镜只能是一块屏幕) [推荐淘宝链接](https://item.taobao.com/item.htm?spm=a230r.1.14.21.37671f49BXbKpo&id=555111074798&ns=1&abbucket=17#detail)
 
-python3
+### 2.2  基础软件要求
 
-pygame 1.9.6    ( 通过pip 安装)
+* python3
 
-### 3.pip包
+* pygame 1.9.6    ( 通过pip 安装)
 
-requests
+### 2.3 pip包
 
-pillow
+在项目根目录使用`pip install -r requirements`自动安装依赖
 
-MyQR
+### 2.4 HTTPS API接口
 
-skimage
-
-### 4.HTTPS API接口
-
-#### [聚合数据(需要注册账号)](https://www.juhe.cn/)
+#### a. [聚合数据(需要注册账号)](https://www.juhe.cn/)
 
 聚合数据是一个比较良心的API平台，对于免费用户每天有100次免费调用。使用此平台*需要注册账号并实名认证*。
 
@@ -67,7 +72,7 @@ skimage
 
 3.[聚合数据 新闻头条](https://www.juhe.cn/docs/api/id/235) （可选，新闻质量不太好，类似UC风格标题）
 
-#### [心知天气(需要注册账号)](https://www.seniverse.com/)
+#### b. [心知天气(需要注册账号)](https://www.seniverse.com/)
 
 心知天气为开发者提供天气方面接口调用的服务。免费用户调用次数无限，但有20QPS并发限制（显然个人使用的话远远不会有那么高的QPS，所以这项限制对个人来说等于没有）。*需要创建账户免费申请。*[产品文档](https://docs.seniverse.com/api/weather/now.html)
 
@@ -77,40 +82,25 @@ skimage
 
 3.[心知天气 生活指数](https://www.seniverse.com/products?iid=new)
 
-以上三个接口只需要免费开通服务即可全部获得，由同一个API秘钥管理。
+以上三个心知天气接口只需要免费开通服务即可全部获得，由同一个API秘钥管理。
 
-#### [知乎日报](http://news-at.zhihu.com/api/4/news/latest)
 
-知乎日报没有官方给出的API，此处请求地址实质上是网上某大佬自己制作的接口。
 
-#### [百度热搜](http://top.baidu.com/mobile_v2/buzz/hotspot/)
+## :hammer:3.环境配置
 
-百度头条没有官方给出的API，此处请求地址实质上是网上某大佬自己制作的接口。
-
-#### [一言](https://hitokoto.cn/)
-
-一言为开发者提供数据接口，获取一句打动灵魂的句子。
-
-## （三）环境配置
-
-### 1.下载字体包
+### 3.1 下载字体包
 
 由于字体包较大，放在GitHub仓库下载速度较慢，因此我将它放在了[百度网盘](https://pan.baidu.com/s/1rlzWqmlZ5RiZYXNIkhxv_Q), 提取码`j252`
 
 解压后保存在`Fontlib/setup`文件夹内
 
-### 2.配置API秘钥相关信息
+### 3.2 配置API秘钥相关信息
 
-#### 修改Function/Weather.py
+* 在`Function/APIConfig.yml`文件中，填入你的API秘钥信息。
 
-![在这里插入图片描述](/Assets/WeatherAPI.jpg)
+* 在`Funtion/OutlookConfig.yml`中，填入你的Outlook账户信息
 
-将第五行的API秘钥修改为你自己的
-
-#### 修改Function/Fun.py
-
-![将对应的秘钥修改为你自己的](/Assets/FunAPI.jpg)
-将对应的秘钥修改为你自己的
+关于Outlook账户的配置，见`Function/Readme.md`
 
 ### 3.自定义数据
 

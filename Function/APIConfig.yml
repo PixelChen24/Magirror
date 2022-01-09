@@ -1,14 +1,14 @@
-HistoryKey: '聚合数据-历史上的今天key'
+HistoryKey: 'f59f3628e0ef4274f257f19de5c54395'
 HistoryURL: 'http://v.juhe.cn/todayOnhistory/queryEvent.php'
 
-NewsKey: '聚合数据-新闻key'
+NewsKey: 'db447f545b8b0218a403c574597edb4a'
 NewsURL: 'http://v.juhe.cn/toutiao/index'
 
-LunarKey: '聚合数据-万年历key'
+LunarKey: '26c5f9d8298f3c050ed8f3fe6eafa052'
 LunarURL: 'http://v.juhe.cn/calendar/day'
 
-WeatherKEY: '心知天气key'
-WeatherUID: '心知天气UID'
+WeatherKEY: 'S87fJuydP8HcOoiEz'
+WeatherUID: 'P5GP6141TFeY0BOJy'
 currentWeatherAPI: 'https://api.seniverse.com/v3/weather/now.json'
 dailyAPI: 'https://api.seniverse.com/v3/weather/daily.json'
 AQIAPI: 'https://api.seniverse.com/v3/air/now.json'
