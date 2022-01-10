@@ -14,13 +14,13 @@ Magirror v2.0最大的更新就在于可以同步日程。该功能需要你配�
 
 ### 1. 注册Azure账户
 
-因为Outlook接口API是office365的服务，因此需要开通一个Azure账户得到访问权限。不用担心，这项服务是免费的，只要你注册了Azure账户即可免费使用。
+因为Outlook接口API是office365的服务，隶属于`Microsoft Graph API`,因此需要开通一个Microsoft Azure账户得到访问权限。不用担心，这项服务是免费的，只要你注册了Azure账户即可免费使用。
 
 注册流程：
 
 * 登录[Azure官网(学生版)](https://azure.microsoft.com/zh-cn/free/students/)。
 
-  普通用户注册Azure账户是需要添加一张visa信用卡进行验证的，但是在中国visa卡难以获取，且卡费较为昂贵。所以推荐使用学生身份注册，无需绑定信用卡。
+  普通用户注册Azure账户是需要添加一张visa信用卡进行验证的，但是在中国visa卡难以获取，且卡费较为昂贵。所以推荐使用学生身份注册，无需绑定信用卡。(当然如果你自己就有办法弄到一张visa卡，当我没说，也可以注册普通个人版的)
 
   ![AzureHome](Assets/AzureHome.png)
 
@@ -45,7 +45,7 @@ Magirror v2.0最大的更新就在于可以同步日程。该功能需要你配�
 
 ​	应用名随便取，(不推荐带有中文)；应用类型选择第三个；
 
-​	重定向URI类型为Web, 地址建议为`http://localhost:8000/callback`，**这就是yml文件中的`redirect`。**
+​	重定向URI类型为Web, 地址建议为`http://localhost:8000/callback`，**这就是yml文件中的`redirect`，将之填入。**
 
 ![Register2](Assets/Register2.png)
 
@@ -53,7 +53,7 @@ Magirror v2.0最大的更新就在于可以同步日程。该功能需要你配�
 
 ![NewTest](Assets/NewTest.png)
 
-**此处`应用程序（客户端）ID`即为`OutlookConfig.yml`文件中的`client_id`。**
+**此处`应用程序（客户端）ID`即为`OutlookConfig.yml`文件中的`client_id`，将之填入**
 
 点击`添加证书和机密`，输入`说明`(随便填，建议不要有中文)，选择有效期，选择`添加`
 
@@ -61,7 +61,43 @@ Magirror v2.0最大的更新就在于可以同步日程。该功能需要你配�
 
 这时会显示app的秘钥，**此时一定要先把`值`的内容复制下来，之后再打开这个页面，秘钥是不会显示的！所以一定要此时立刻复制！**
 
-`值`的内容就是yml文件中的`client_secret`。
+**`值`的内容就是yml文件中的`client_secret`,将之填入。**
 
 ![secret](Assets/copysecret.png)
+
+---
+
+### 2.获取Token
+
+Token是用户访问`Microsoft Graph API`的唯一途径，在Web网页应用中，用户通过手动键入账户密码，授权许可，即可访问`Microsofr Graph API`，但是这个过程必须要有用户手动的操作确认授权，(类比微信windows版，每次登录都要手动确认)，对于魔镜这样的应用非常不方便，因此可以考虑使用官方提供的`refresh token`机制。
+
+所谓`refresh token`，顾名思义，根据之前成功访问使用的token，产生之后访问用的token。具体可以理解为，用户在浏览器第一次授权登录Microsoft账户时，手动授权，这时会产生token信息，包含`access_token`和`refresh_token`。`access_token`用于本次授权，生命周期一般为一小时；而`refresh_token`则相当于是留下了一份DNA信息，生命周期**理论上**(注：在官方文档并没有查询到相关信息，不过根据亲身实践，两个礼拜过去了，最开始的`refresh_token`仍然有效)是永久的，以后授权登录的时候，可以根据这份"DNA信息"，调用函数`acquire_token_by_refresh_token()`生成一个新的`token`进行访问。
+
+所以现在的任务就是获取到你的`refresh_token`! 
+
+2.1. 打开项目根目录`Utils/graph_tutorial`文件夹，先使用`pip install -r requirements.txt`安装依赖
+
+2.2. 配置`auth_settings.yml`文件，内容几乎同`Function/OutlookConfig.yml`。
+
+2.3. 在此处打开终端/cmd，运行`python manage.py runserver`，如果没有报错，说明配置正确。
+
+2.4. 打开浏览器，访问`http://localhost:8000/callback`(就是你配置的Redirect URI地址)，按照提示登录授权。
+
+以下是登录授权成功后的界面:
+
+![page](Assets/LoginSuccess.png)
+
+此时点击顶部的`Calendar`,如果跳转的界面能够正常显示你的日历日程，说明配置正确。
+
+2.5. 成功完成以上的操作后，在当前目录会生成一个`refresh_token.txt`的文件,里面即保存着你的`refresh_token`，将他复制，填入`Function/OutlookConfig.yml`文件的对应位置。
+
+---
+
+## :gift:Congratulations!:gift:
+
+大功告成！现在Outlook已经全部配置完毕！
+
+---
+
+## :star:使用技巧
 

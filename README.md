@@ -21,21 +21,14 @@
 包装也没开始做。不过这些应该都是小事，而且我还想扩展一些智能家居，传感器，语音助手之类的IO设备功能，于是就没有做包装。
 
 1. 显示天气，生活指数
-
 2. 显示最近三天日程 (**与Outlook 账户同步**，这是v2.0版本的更新！)
-
 3. 显示当日热点
-
 4. 推送高质量知乎日报，可以扫描QR码阅读
-
 5. 历史上的今天
-
 6. 一段让人心动的句子
 
    **以上数据除时间实时刷新外，每到整点刷新一次**
-   
 7. 基于blinker的智能家居控制（开发中）
-
 8. 语音聊天机器人（开发中）
 
 ---
@@ -45,15 +38,12 @@
 ### 2.1. 硬件要求
 
 * 装好官方raspbian系统的树莓派
-
 * 一块1080p的小屏幕 [推荐淘宝链接](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3e352e8dEUsahj&id=558956849119&_u=b2029g7480bb2d)
-
 * 单向透光原子镜(魔镜的灵魂！没了这块镜子你的魔镜只能是一块屏幕) [推荐淘宝链接](https://item.taobao.com/item.htm?spm=a230r.1.14.21.37671f49BXbKpo&id=555111074798&ns=1&abbucket=17#detail)
 
 ### 2.2  基础软件要求
 
 * python3
-
 * pygame 1.9.6    ( 通过pip 安装)
 
 ### 2.3 pip包
@@ -84,7 +74,7 @@
 
 以上三个心知天气接口只需要免费开通服务即可全部获得，由同一个API秘钥管理。
 
-
+---
 
 ## :hammer:3.环境配置
 
@@ -94,25 +84,16 @@
 
 解压后保存在`Fontlib/setup`文件夹内
 
+
+
 ### 3.2 配置API秘钥相关信息
 
 * 在`Function/APIConfig.yml`文件中，填入你的API秘钥信息。
-
 * 在`Funtion/OutlookConfig.yml`中，填入你的Outlook账户信息
 
-关于Outlook账户的配置，见`Function/Readme.md`
+**关于Outlook账户的配置，见[帮助文档](Function/Readme.md)**
 
-### 3.自定义数据
 
-#### 写入自己的课表信息
-
-![在这里插入图片描述](/Assets/SetClassTable.jpg)
-
-table是一个字典，字典第一层的键为星期，第二层的键为课序号。第三层的键为课程名course,周次range,上课地点room.
-
-![在这里插入图片描述](/Assets/MyClass.png)
-
-比如上图是我的课表，那么对应的table结构就是第一张图。可以根据自己实际情况修改table（对于没有python基础的同学来说可能有点难，如果自己不会改可以联系我QQ:1640867082)
 
 #### 自定义一言句子类型
 
@@ -120,7 +101,7 @@ table是一个字典，字典第一层的键为星期，第二层的键为课序
 
 具体操作为：
 
-![在这里插入图片描述](/Assets/SentenceType.jpg)
+![s](/Assets/SentenceType.jpg)
 
 Function/Fun.py文件，在16行的中括号内增加或删除类型（字母'a'~'k'的代号）即可。代号代表的类型参见 [链接](https://pa-1251215871.cos-website.ap-chengdu.myqcloud.com/sentence/#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0)
 
@@ -129,6 +110,8 @@ Function/Fun.py文件，在16行的中括号内增加或删除类型（字母'a'
 树莓派默认使用python2.7，然而本人在Windows上面开发好之后放上去运行报了一堆奇怪的错误，罪魁祸首是python2.7
 
 因此最好将默认python版本换为python3 [详见教程](https://blog.csdn.net/ylzmm/article/details/107827065)
+
+---
 
 ## （四）运行
 
@@ -148,11 +131,13 @@ python main.py
 
 你也可以编写一个shell脚本，使树莓派开机就自动运行此命令。
 
+---
+
 ## （五）组装
 
 软件都写好了，硬件连线也就电源线和HDMI显示线，(相信聪明的你会自己做外观了吧
 
-（其实是我自己还没有把这些东西装起来，教程还不能图文并茂的写，以后会补起来的）
+
 
 树莓派的电源线可以和显示器的电源线公用一根，通过改装USB先把两根焊成一根。
 
@@ -178,7 +163,7 @@ python main.py
 sudo apt install libsdl2-ttf-2.0-0
 ```
 
-有其他问题欢迎随时联系QQ 1640867082
+有其他问题欢迎提issue或者随时联系QQ 1640867082!
 
 我炒鸡热心的！
 
