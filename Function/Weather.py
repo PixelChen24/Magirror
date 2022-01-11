@@ -4,7 +4,7 @@ import yaml
 filestream=open("Function/APIConfig.yml",'r')
 APIConfig=yaml.load(filestream,yaml.SafeLoader)
 LOCATION = requests.get('https://checkip.amazonaws.com').text.strip()#获取本机ip地址
-LOCATION='西安'
+# LOCATION='西安'  # 如果你使用了代理，那么请手动指定城市
 print("Welcome my friend from ",LOCATION)
 KEY = APIConfig['WeatherKEY']
 UID = APIConfig['WeatherUID']  # 用户ID
